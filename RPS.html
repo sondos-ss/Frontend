@@ -21,41 +21,41 @@
 
     <script>
        function playGame(playerMove) {
-        const computerMove = ComputerMove();
+        const compMove = getComputerMove();
 
         let result = '';
 
         if (playerMove === 'scissors') {
-          if (computerMove === 'rock') {
+          if (compMove === 'rock') {
             result = 'You lose.';
-          } else if (computerMove === 'paper') {
+          } else if (compMove === 'paper') {
             result = 'You win.';
-          } else if (computerMove === 'scissors') {
+          } else if (compMove === 'scissors') {
             result = 'Tie.';
           }
 
         } else if (playerMove === 'paper') {
-          if (computerMove === 'rock') {
+          if (compMove === 'rock') {
             result = 'You win.';
-          } else if (computerMove === 'paper') {
+          } else if (compMove === 'paper') {
             result = 'Tie.';
-          } else if (computerMove === 'scissors') {
+          } else if (compMove === 'scissors') {
             result = 'You lose.';
           }
           
         } else if (playerMove === 'rock') {
-          if (computerMove === 'rock') {
+          if (compMove === 'rock') {
             result = 'Tie.';
-          } else if (computerMove === 'paper') {
+          } else if (compMove === 'paper') {
             result = 'You lose.';
-          } else if (computerMove === 'scissors') {
+          } else if (compMove === 'scissors') {
             result = 'You win.';
           }
         }
 
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+        alert(`You picked ${playerMove}. Computer picked ${compMove}. ${result}`);
       }
-       function computerMove(){
+       function getComputerMove(){
             const randomN=Math.random();
             let move='';
             if(randomN>=0&&randomN<1/3)move='rock';
